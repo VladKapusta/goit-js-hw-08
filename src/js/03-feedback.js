@@ -20,7 +20,7 @@ const feedbackFormState = localStorage.getItem('feedback-form-state');
 const parseFormState = JSON.parse(feedbackFormState);
 
 if (feedbackFormState) {
-  ({ email, massege } = parseFormState);
+  const { email, massege } = parseFormState;
   inputRef.value = email;
   textareaRef.value = massege;
 }
