@@ -28,11 +28,14 @@ if (feedbackFormState) {
 formRef.addEventListener('submit', inSubmitBtn);
 function inSubmitBtn(e) {
   e.preventDefault();
-
-  console.log({
-    email: inputRef.value,
-    massege: textareaRef.value,
-  });
-  localStorage.removeItem('feedback-form-state');
-  e.currentTarget.reset();
+  if (inputRef.value === '' || textareaRef.value === '') {
+    alert('Усі поля повинні бути заповнені');
+  } else {
+    console.log({
+      email: inputRef.value,
+      massege: textareaRef.value,
+    });
+    localStorage.removeItem('feedback-form-state');
+    e.currentTarget.reset();
+  }
 }
